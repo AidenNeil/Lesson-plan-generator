@@ -5,8 +5,9 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   // Base path for GitHub Pages deployment
-  // Change to '/' if using a custom domain
-  base: '/Lesson-plan-generator/',
+  // Use '/Lesson-plan-generator/' if deploying to username.github.io/repo-name
+  // Use '/' if using a custom domain or deploying to username.github.io
+  base: process.env.GITHUB_PAGES_BASE || '/Lesson-plan-generator/',
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
